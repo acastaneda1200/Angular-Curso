@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { Producto } from '../producto.model';
+
+@Component({
+  selector: 'app-producto-lista',
+  templateUrl: './producto-lista.component.html',
+  styleUrls: ['./producto-lista.component.css']
+})
+export class ProductoListaComponent implements OnInit {
+
+  productos: Producto[] = [
+    new Producto('Angular', 'Es un Framework desarrollado por google',
+    'https://angular.io/assets/images/logos/angular/angular.png'),
+
+    new Producto('React', 'Es un libreria desarrollada por facebook',
+    'https://miro.medium.com/max/2000/1*teK4yjRXfJ5IBavrQueB6g.png'),
+
+
+    new Producto('Vue', 'Es un Framework desarrollado por Evan You',
+    'data:image/png;base64,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')
+
+ 
+    
+  ];
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
