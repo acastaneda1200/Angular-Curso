@@ -1,8 +1,9 @@
-<app-header></app-header>
+<app-header (condicionSelected)="OnNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-producto></app-producto>
+      <app-producto *ngIf="loadCondicion === 'cursos'"></app-producto>
+      <app-producto-mantener *ngIf="loadCondicion !== 'cursos'"></app-producto-mantener>
     </div>
   </div>
 </div>

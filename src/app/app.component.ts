@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loadCondicion = 'cursos';
+  
+
+  OnNavigate(condicion: string){
+    this.loadCondicion = condicion;
+  }
+
   title = 'curso-angular';
 }
